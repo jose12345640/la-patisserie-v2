@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Lobster&display=swap');
+
+.header{
+    border: 1px solid #F4F3F3;
+    display: flex;
+    justify-content: space-between;
+    padding: 34px;
+    align-items: center;
+
+    &__logo{
+        font-size: 32px;
+        font-family: "Lobster", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #FF3C3C;
+    }
+
+    &__menu{
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 60px;
+
+        li{
+            list-style: none;
+
+            a{
+                text-decoration: none;
+                color: black;
+                font-size: 24px;
+                font-family: "Bacasime Antique", serif;
+                font-weight: 400;
+                font-style: normal;
+                &:hover{
+                    color: #FF6868 !important;
+                }
+            }
+        }
+    }
+}

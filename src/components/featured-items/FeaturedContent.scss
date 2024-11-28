@@ -1,0 +1,19 @@
+.feature-item{
+   max-width: 345px;
+   &__img{
+    position: relative;
+    &-tag{
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        padding: 4px;
+        border-radius: 16px;        
+    }
+   }
+   &__content{
+    display: flex;
+    flex-flow: row nowrap;
+    padding-top: 8px;
+    justify-content: space-between;
+   }
+}
