@@ -1,7 +1,21 @@
 .categories{
     margin: 75px 64px 75px 64px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 
     .searchContent{
-        justify-content: center;
+        place-items: center;
+    }
+
+    .filterContent{
+        margin-top: 60px;
+    }
+
+    .itemContent{
+        margin-top: 120px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px; 
     }
 }
