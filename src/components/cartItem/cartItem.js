@@ -9,9 +9,9 @@ const CartItem = ({img, name, price}) => {
                     <h1>{name}</h1>
                     <p>${price}</p>
                 </div>
-                <div>- Numero +</div>
+                <input type="number"/>
             </div>
-            <button>X</button>
+            <button className="cart-container__button">X</button>
         </div>
     )
 }

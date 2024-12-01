@@ -19,6 +19,11 @@
     align-items: center;
 
   }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+  }
 }
 
 @media (max-width: 600px) {
