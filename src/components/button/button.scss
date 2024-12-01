@@ -1,0 +1,14 @@
+.type.primary {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  padding: 0 16px;
+}
+
+.type.secondary {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 8px 48px;
+  align-self: flex-start;
+}

@@ -1,0 +1,20 @@
+.search-cep {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  &__label {
+
+  }
+
+  &__container {
+    display: flex;
+    gap: 16px;
+
+    &__input {
+      height: 30px;
+      width: 100%;
+    }
+  }
+}

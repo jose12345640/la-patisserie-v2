@@ -16,12 +16,42 @@
     }
 
     &__total {
+      min-width: 350px;
+
       &__price {
+        display: flex;
+        flex-direction: column;
         background-color: #FFD5D5;
         padding: 30px;
+        gap: 30px;
+
         .cart-h1 {
           font-size: 32px;
         }
+
+        .total-price-container {
+          display: flex;
+          gap: 40px;
+        }
+      }
+
+      .container-cep {
+        display: flex;
+        border: 1px solid #FFD5D5;
+        justify-items: center;
+        align-items: center;
+        padding: 70px 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .cart {
+    &__container {
+      flex-direction: column-reverse;
+
+      &__total {
       }
     }
   }
