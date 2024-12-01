@@ -1,27 +1,75 @@
+import React, { useState } from "react";
+import axios from "axios";
 import "./login.scss"
 
 function Login() {
-    return (
-        <section className="login">
-            <div className="container-form">
-                <p className="logo">
-                    Le Patisserie
-                </p>
-                <form className="forms-inputs">
-                    <input className="forms-inputs__input" placeholder="E-mail ou nome de usuário"/>
-                    <input className="forms-inputs__input" placeholder="Palavra-passe"/>
-                </form>
-                <div className="links">
-                    <button className="links__button" type="submit">Iniciar Sessão</button>
-                    <a className="links__link-primary" href="#">Esqueci a palavra-passe</a>
-                </div>
-            </div>
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-            <div className="container-links">
-                <p>Não tem uma conta <a className="container-links__link-primary" href="#">Registre-se</a>.</p>
-            </div>
-        </section>
-    )
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8080/authorization-service/auth/token", {
+        username,
+        password,
+      });
+
+      
+      const { token } = response.data;
+      console.log("Token recebido:", token);
+
+      // Salvar o token no localStorage ou outra solução de armazenamento
+      localStorage.setItem("authToken", token);
+
+      alert("Login bem-sucedido!");
+    } catch (err) {
+      console.error("Erro ao fazer login:", err);
+      setError("Credenciais inválidas ou erro no servidor");
+    }
+  };
+
+  return (
+    <section className="login">
+      <div className="container-form">
+        <p className="logo">Le Patisserie</p>
+        <form className="forms-inputs" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="username">Nome de Usuário</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Digite seu nome de usuário"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Digite sua senha"
+              required
+            />
+          </div>
+          {error && <p className="error">{error}</p>}
+          <div className="links">
+            <button type="submit">Iniciar Sessão</button>
+            <a href="#">Esqueci a palavra-passe</a>
+          </div>
+        </form>
+      </div>
+      <div className="container-links">
+        <p>
+          Não tem uma conta? <a href="#">Registre-se</a>.
+        </p>
+      </div>
+    </section>
+  );
 }
 
-export default Login
+export default Login;
