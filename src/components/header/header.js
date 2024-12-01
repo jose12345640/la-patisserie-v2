@@ -16,7 +16,7 @@ function Header() {
             </div>
             <div className="header__user">
                 <div className="header__user-obj">
-                    <a className="" href=""><img src="https://i.ibb.co/k2YH5Xy/Vector-1.png" /></a>
+                    <a className="" href="/carrinho"><img src="https://i.ibb.co/k2YH5Xy/Vector-1.png" /></a>
                 </div>
             </div>
         </header>
