@@ -1,44 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Lobster&display=swap');
 
-.about{
-    margin: 90px 95px 100px 95px;
-    font-family: "Bacasime Antique", serif;
-    font-weight: 400;
-    font-style: normal;
-        
-    &__content{
-        display: flex;
-        flex-direction: row;
-        gap: 52px;
-        justify-content: center;
+.about {
+  margin: 90px 95px 100px 95px;
+  font-family: "Bacasime Antique", serif;
+  font-weight: 400;
+  font-style: normal;
 
-        &-img{
-            
-        }
-        &-text{
-            display: flex;
-            flex-direction: column;
-         .title{
-            font-size: 40px;
-            color: #FF3C3C;
-            margin-bottom: 40px;
-            
-         }
-         .description{
-            font-size: 24px;
-            max-width: 750px;
-            padding-bottom: 30px;
-         }   
-        }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 52px;
+    justify-content: center;
+
+    &-img {
+
     }
-    &__footer{
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        margin-top: 60px;
-        max-width: 1500px;
-        &-text{
-            font-size: 24px;
-        }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-size: 40px;
+        color: #FF3C3C;
+        margin-bottom: 40px;
+
+      }
+
+      .description {
+        font-size: 24px;
+        max-width: 750px;
+        padding-bottom: 30px;
+      }
     }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 60px;
+    max-width: 1500px;
+
+    &-text {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    margin: 10px;
+  }
+
+  .about__content {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

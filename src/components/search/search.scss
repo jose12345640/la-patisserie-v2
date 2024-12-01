@@ -1,8 +1,12 @@
-.search{
-    .input{
-        border-radius: 10px;
-        width: 700px;
-        padding: 20px;
-        border: 1px solid gainsboro;
-    }
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .input {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid gainsboro;
+  }
 }

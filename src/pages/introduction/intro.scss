@@ -1,91 +1,149 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Lobster&display=swap');
 
+.intro {
+  margin: 60px 90px 60px 90px;
 
+  .banner__content {
+    padding: 0 60px 0 60px;
+    display: flex;
 
-.intro{
-    margin: 60px 90px 60px 90px;
+    &-img {
+      flex: 6;
 
-    .banner__content{
-        padding: 0 60px 0 60px;
+      img {
+        width: 100%;
+      }
+    }
+
+    &-info {
+      background-color: #FFD5D5;
+      flex: 5;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 16px;
+      border-radius: 0 16px 16px 0;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-family: "Manrope", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        max-width: 375px;
+        font-size: 16px;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  .categories__content {
+    margin-top: 110px;
+
+    h2 {
+      font-size: 32px;
+      font-family: "Bacasime Antique", serif;
+      font-weight: 400;
+      font-style: normal;
+      margin-bottom: 39px;
+    }
+
+    &__items {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 62px;
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      &-info {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+    }
+  }
 
-        &-img{
-            flex: 6;
-            img{
-                width: 100%;
-            }
-        }
+  .featured__content {
+    margin-top: 110px;
 
-        &-info{
-            background-color: #FFD5D5;
-            flex: 5;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            display: flex;
-            flex-flow: column nowrap;
-            gap: 16px;
-            border-radius: 0 16px 16px 0;
-
-            h2{
-                font-size: 32px;
-            }
-            p{
-                font-family: "Manrope", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 400;
-                font-style: normal;
-                max-width: 375px;
-                font-size: 16px;
-                line-height: 2rem;
-            }
-        }
+    h2 {
+      font-size: 32px;
+      font-family: "Bacasime Antique", serif;
+      font-weight: 400;
+      font-style: normal;
+      margin-bottom: 39px;
     }
 
-    .categories__content{
-        margin-top: 110px;
-        h2{
-            font-size: 32px;
-            font-family: "Bacasime Antique", serif;
-            font-weight: 400;
-            font-style: normal;
-            margin-bottom: 39px;
-        }
+    &-items {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 90px;
+    }
+  }
+}
 
-        &__items{
-            display: flex;
-            flex-flow: row nowrap;
-            gap: 62px;
+@media (max-width: 1300px) {
+  .intro {
+    margin: 20px;
 
-            a{
-                color: black;
-                text-decoration: none;
-            }
-
-            &-info{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-        }
+    .banner__content {
+      width: 100%;
+      padding: 0px 0px;
     }
 
-    .featured__content{
-        margin-top: 110px;
-        h2{
-            font-size: 32px;
-            font-family: "Bacasime Antique", serif;
-            font-weight: 400;
-            font-style: normal;
-            margin-bottom: 39px;
-        }
-
-        &-items{
-            display: flex;
-            flex-flow: row nowrap;
-            gap: 90px;
-        }
+    .banner__content-info {
+      padding: 10px;
+      border-radius: 0 0 0 10px;
     }
+  }
+
+  .categories__content {
+    .categories__content__items {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 50px;
+
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .featured__content {
+    &-items {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .intro {
+    .banner__content {
+      flex-direction: column;
+    }
+  }
 }

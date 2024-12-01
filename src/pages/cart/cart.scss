@@ -1,0 +1,28 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+
+  &__container {
+    display: flex;
+    align-self: center;
+    gap: 30px;
+
+    &__list {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #FFD5D5;
+    }
+
+    &__total {
+      &__price {
+        background-color: #FFD5D5;
+        padding: 30px;
+        .cart-h1 {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
