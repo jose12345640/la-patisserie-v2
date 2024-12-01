@@ -1,0 +1,47 @@
+.radio-group {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.radio-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  position: relative;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #FF6868;
+      color: white
+    }
+
+    &.selected {
+      background-color: #FFC0C0;
+      color: white;
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: #FFC0C0;
+}
