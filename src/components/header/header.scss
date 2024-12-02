@@ -37,6 +37,32 @@
             }
         }
     }
+
+    &__user{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        
+        &-acessibility{
+            display: flex;
+            gap: 8px;
+
+            .acessibility-btn{
+                background-color: #F4F3F3;
+                border: 1px solid #b4b4b4;
+                align-content: center;
+                padding: 7px;
+            }
+        }
+
+        &-profile{
+            a{
+                background: #b4b4b4;
+                padding: 9px 18px;
+                border-radius: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
