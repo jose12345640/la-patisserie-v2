@@ -59,7 +59,7 @@ function Intro() {
                 <h2>Nossas Categorias</h2>
                 <div className="categories__content__items">
                     <div>
-                        <a href="#">
+                        <a href="/categorias">
                             <div className="categories__content__items-info">
                                 <img src="https://i.ibb.co/d06YkWT/image-2.png" alt="" />
                                 <p>Chocolateria</p>
@@ -67,7 +67,7 @@ function Intro() {
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="/categorias">
                             <div className="categories__content__items-info">
                                 <img src="https://i.ibb.co/MSRJ23r/image-3.png" alt="" />
                                 <p>Tortas</p>
@@ -75,7 +75,7 @@ function Intro() {
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="/categorias">
                         <div className="categories__content__items-info">
                             <img src="https://i.ibb.co/G3ScR9T/image-4-1.png" alt="" />
                             <p>Bolos</p>
