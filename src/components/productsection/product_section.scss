@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+
+.productsection{
+    display: flex;
+    flex-flow: row;
+    gap: 80px;
+
+    &__id{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 26px;
+
+        &-description{
+            font-family: "Baskervville", serif;
+            font-weight: 400;
+            font-style: normal;
+            max-width: 600px;
+            font-size: 16px;
+        }
+    }
+
+    &__info{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 22px;
+        &-name{
+            font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #FF3C3C;
+            font-size: 32px;
+        }
+        &-price{
+            font-family: "Bacasime Antique", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+        }
+
+        &-btn{
+            button{
+                color: white;
+                background-color: #FF7272;
+                font-family: "Bacasime Antique", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 16px;
+                border: transparent;
+                padding: 9px;
+                width: 275px;
+                cursor: pointer;
+            }
+        }
+    }
+}

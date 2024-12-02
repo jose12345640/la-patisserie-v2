@@ -1,22 +1,30 @@
 import "./product.scss"
+import ProductSection from "../../components/productsection/product_section"
 
-function Product({img, description, name, price}) {
-    <div>
-        <div>
-            <img src={img}/>
-            <p>{description}</p>
+
+const produtos = [
+    {
+        imgProduto: "https://i.ibb.co/Yps25v0/image-1.png",
+        nameProduto: "Truffe Citron",
+        descriptionProduto: "A clássica e famosa Floresta Negra tem como base Massa Sablée de Cacau, recheada com Geleia Artesanal de Cereja, Ganache Meio Amargo, finalizada com creme de chocolate, chantilly de nata, geleia de cereja, raspas de chocolate meio amargo e cerejas frescas.",
+        priceProduto: "R$ 92,00"
+    }
+];
+
+function Product() {
+    return(
+        <div className="product">
+            {produtos.map((produto, index) => (
+                    <ProductSection
+                        key={index}
+                        imgProduto={produto.imgProduto}
+                        nameProduto={produto.nameProduto}
+                        descriptionProduto={produto.descriptionProduto}
+                        priceProduto={produto.priceProduto}
+                    />
+                ))}
         </div>
-        <div>
-            <h1>{name}</h1>
-            <p>{price}</p>
-            <div>radio</div>
-            <div>radio</div>
-            <div>
-                <div>bah</div>
-                <div>super botão</div>
-            </div>
-        </div>
-    </div>
+    )
 }
 
 export default Product
