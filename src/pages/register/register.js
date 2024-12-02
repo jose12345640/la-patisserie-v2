@@ -14,15 +14,14 @@ function Register() {
                     <input className="forms-inputs__input" placeholder="Nome de usuário"/>
                 </form>
                 <div className="links">
-                    <p>Com este registo, aceitas os nossos <a className="links__link-primary" href="#">Termos</a>, a
-                         <a className="links__link-primary" href="#">Política de Privacidade e a Política de Cookies</a>.
+                    <p>Ao se registrar, você concorda com nossos <a className="links__link-primary" href="" download="Termos.pdf">Termos</a> e nossa <a className="links__link-primary" href="" download="Política de Privacidade e Cookies.pdf">Política de Privacidade e Cookies</a>.
                     </p>
                     <button className="links__button" type="submit">Registrar</button>
                 </div>
             </div>
 
             <div className="container-links">
-                <p>Já tem uma conta? <a className="container-links__link-primary" href="#">Inicie sessão</a>.</p>
+                <p>Já tem uma conta? <a className="container-links__link-primary" href="/login">Inicie sessão</a></p>
             </div>
         </section>
     )

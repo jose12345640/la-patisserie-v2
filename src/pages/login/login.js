@@ -34,38 +34,36 @@ function Login() {
       <div className="container-form">
         <p className="logo">Le Patisserie</p>
         <form className="forms-inputs" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="username">Nome de Usuário</label>
+          <div className="forms-inputs__data">
             <input
               type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Digite seu nome de usuário"
+              placeholder="E-mail ou nome de usuário"
               required
             />
           </div>
-          <div>
-            <label htmlFor="password">Senha</label>
+          <div className="forms-inputs__data">
             <input
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Digite sua senha"
+              placeholder="Palavra-passe"
               required
             />
           </div>
           {error && <p className="error">{error}</p>}
           <div className="links">
-            <button type="submit">Iniciar Sessão</button>
-            <a href="#">Esqueci a palavra-passe</a>
+            <button className="links__button" type="submit">Iniciar Sessão</button>
+            <a className="links__link-primary" href="#">Esqueci a palavra-passe</a>
           </div>
         </form>
       </div>
       <div className="container-links">
         <p>
-          Não tem uma conta? <a href="#">Registre-se</a>.
+          Não tem uma conta? <a className="container-links__link-primary" href="/cadastro">Registre-se</a>
         </p>
       </div>
     </section>
