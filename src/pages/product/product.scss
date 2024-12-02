@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Lobster&display=swap');
+
+
 .product{
     margin: 70px;
+
+    &__recomendation{
+        margin-top: 90px;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 30px;
+
+        h2{
+            font-size: 32px;
+            font-family: "Bacasime Antique", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        &-items{
+            display: flex;
+            flex-flow: row;
+            gap: 80px;
+        }
+    }
 }
