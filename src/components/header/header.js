@@ -5,13 +5,13 @@ function Header() {
     const [fontSize, setFontSize] = useState(16);
 
     const increaseFontSize = () => {
-        setFontSize((prevSize) => Math.min(prevSize + 2, 18));
-        document.documentElement.style.setProperty("--base-font-size", `${fontSize + 2}px`);
+        setFontSize((prevSize) => Math.min(prevSize + 1, 18));
+        document.documentElement.style.setProperty("--base-font-size", `${fontSize + 1}px`);
     };
 
     const decreaseFontSize = () => {
-        setFontSize((prevSize) => Math.max(prevSize - 2, 14));
-        document.documentElement.style.setProperty("--base-font-size", `${fontSize - 2}px`);
+        setFontSize((prevSize) => Math.max(prevSize - 1, 14));
+        document.documentElement.style.setProperty("--base-font-size", `${fontSize - 1}px`);
     };
 
     return (
