@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./login.scss"
+import { useNavigate } from "react-router-dom"; 
+import "./login.scss";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,13 +17,16 @@ function Login() {
         password,
       });
 
-      
       const { token } = response.data;
       console.log("Token recebido:", token);
 
       localStorage.setItem("authToken", token);
 
       alert("Login bem-sucedido!");
+
+      setTimeout(() => {
+        navigate("/"); 
+      }, 1000); 
     } catch (err) {
       console.error("Erro ao fazer login:", err);
       setError("Credenciais inválidas ou erro no servidor");

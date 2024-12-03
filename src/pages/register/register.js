@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import "./register.scss";
 
 function Register() {
@@ -6,15 +7,16 @@ function Register() {
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
     const [error, setError] = useState(null);
+    const navigate = useNavigate(); 
 
     const handleRegister = async (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const userData = {
             username,
             password,
             email,
-            role: "USER", 
+            role: "USER",
         };
 
         try {
@@ -31,6 +33,10 @@ function Register() {
             }
 
             alert("Usuário registrado com sucesso!");
+
+            setTimeout(() => {
+                navigate("/login");
+            }, 1000);
         } catch (error) {
             setError(error.message);
         }
