@@ -7,11 +7,12 @@ import RadioGroup from "../../components/radioButton/radioButton";
 function Categories() {
     const [produtos, setProdutos] = useState([]);
     const [filteredProdutos, setFilteredProdutos] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState("ALL");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const options = [
+        { value: "ALL", label: "Todos" },
         { value: "CAKE", label: "Tortas" },
         { value: "CHOCOLATE", label: "Chocolateria" },
         { value: "PIE", label: "Amendoim" },
@@ -31,7 +32,7 @@ function Categories() {
                     nameProduto: item.name,
                     descriptionProduto: item.description,
                     priceProduto: `R$ ${item.price.toFixed(2)}`,
-                    category: item.category, 
+                    category: item.category,
                 }));
 
                 setProdutos(produtosAdaptados);
@@ -47,12 +48,12 @@ function Categories() {
     }, []);
 
     useEffect(() => {
-        if (selectedCategory) {
+        if (selectedCategory === "ALL") {
+            setFilteredProdutos(produtos);
+        } else {
             setFilteredProdutos(
                 produtos.filter((produto) => produto.category === selectedCategory)
             );
-        } else {
-            setFilteredProdutos(produtos); 
         }
     }, [selectedCategory, produtos]);
 
@@ -64,7 +65,7 @@ function Categories() {
             <div className="filterContent">
                 <RadioGroup
                     options={options}
-                    onCategoryChange={setSelectedCategory} 
+                    onCategoryChange={setSelectedCategory}
                 />
             </div>
             <div className="itemContent">

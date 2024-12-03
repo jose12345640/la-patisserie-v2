@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./radioButton.scss";
 
 const RadioGroup = ({ options, onCategoryChange }) => {
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState("ALL");
 
-    const handleChange = (value) => {
+    const handleCategoryChange = (value) => {
         setSelected(value);
-        onCategoryChange(value); 
+        onCategoryChange(value);
     };
 
     return (
@@ -19,7 +19,7 @@ const RadioGroup = ({ options, onCategoryChange }) => {
                         name="radio"
                         value={option.value}
                         checked={selected === option.value}
-                        onChange={() => handleChange(option.value)}
+                        onChange={() => handleCategoryChange(option.value)}
                     />
                     <label
                         htmlFor={option.value}
