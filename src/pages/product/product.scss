@@ -4,6 +4,16 @@
 .product{
     margin: 70px;
 
+    .productsection{
+        &__id{
+            img{
+                height: 400px;
+                width: 700px;
+                object-fit: cover;
+            }
+        }
+    }
+
     &__recomendation{
         margin-top: 90px;
         display: flex;

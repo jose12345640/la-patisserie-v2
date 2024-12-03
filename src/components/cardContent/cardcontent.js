@@ -1,10 +1,9 @@
 import "./cardContent.scss"
 
-const CardContent = ({ imgProduto, nameProduto, descriptionProduto, priceProduto }) => {
+const CardContent = ({ imgProduto, nameProduto, descriptionProduto, priceProduto, onClick  }) => {
     
     return (
-        <div className="cardContent">
-            <a href="/produto">
+        <div className="cardContent" onClick={onClick}>
                 <div className="cardContent__img">
                     <img src={imgProduto} />
                 </div>
@@ -15,7 +14,6 @@ const CardContent = ({ imgProduto, nameProduto, descriptionProduto, priceProduto
                     </p>
                     <span className="cardContent__info-price">{priceProduto}</span>
                 </div>
-            </a>
             <div className="cardContent__btn">
                 <btn>
                     <p>Adicionar</p>

@@ -4,6 +4,7 @@ import "./categories.scss";
 import Search from "../../components/search/search";
 import CardContent from "../../components/cardContent/cardcontent";
 import RadioGroup from "../../components/radioButton/radioButton";
+import { useNavigate } from "react-router-dom";
 
 function Categories() {
     const location = useLocation(); 
@@ -12,6 +13,11 @@ function Categories() {
     const [selectedCategory, setSelectedCategory] = useState("ALL");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
+
+    const handleProductClick = (produto) => {
+        navigate("/produto", { state: { produto } });
+    };
 
     const options = [
         { value: "ALL", label: "Todos" },
@@ -94,6 +100,7 @@ function Categories() {
                             nameProduto={produto.nameProduto}
                             descriptionProduto={produto.descriptionProduto}
                             priceProduto={produto.priceProduto}
+                            onClick={() => handleProductClick(produto)}
                         />
                     ))}
             </div>

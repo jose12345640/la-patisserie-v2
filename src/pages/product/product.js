@@ -1,17 +1,8 @@
 import "./product.scss"
 import ProductSection from "../../components/productsection/product_section"
 import FeaturedContent from "../../components/featured-items/featured-items"
+import { useLocation } from "react-router-dom";
 
-
-
-const produtos = [
-    {
-        imgProduto: "https://i.ibb.co/Yps25v0/image-1.png",
-        nameProduto: "Truffe Citron",
-        descriptionProduto: "A clássica e famosa Floresta Negra tem como base Massa Sablée de Cacau, recheada com Geleia Artesanal de Cereja, Ganache Meio Amargo, finalizada com creme de chocolate, chantilly de nata, geleia de cereja, raspas de chocolate meio amargo e cerejas frescas.",
-        priceProduto: "R$ 92,00"
-    }
-];
 
 const produtosRecomendados = [
     {
@@ -50,17 +41,18 @@ const produtosRecomendados = [
 ];
 
 function Product() {
+
+    const location = useLocation();
+    const produto = location.state?.produto || {};
+
     return(
         <div className="product">
-            {produtos.map((produto, index) => (
-                    <ProductSection
-                        key={index}
-                        imgProduto={produto.imgProduto}
-                        nameProduto={produto.nameProduto}
-                        descriptionProduto={produto.descriptionProduto}
-                        priceProduto={produto.priceProduto}
-                    />
-                ))}
+                <ProductSection
+                    imgProduto={produto.imgProduto}
+                    nameProduto={produto.nameProduto}
+                    descriptionProduto={produto.descriptionProduto}
+                    priceProduto={produto.priceProduto}
+                />
                 <div className="product__recomendation">
                     <h2>Você Também Pode Gostar</h2>
                     <div className="product__recomendation-items">
