@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"; // Importa useLocation
 import "./categories.scss";
 import Search from "../../components/search/search";
 import CardContent from "../../components/cardContent/cardcontent";
 import RadioGroup from "../../components/radioButton/radioButton";
 
 function Categories() {
+    const location = useLocation(); // Usando o hook useLocation para acessar a URL
     const [produtos, setProdutos] = useState([]);
     const [filteredProdutos, setFilteredProdutos] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -13,10 +15,19 @@ function Categories() {
 
     const options = [
         { value: "ALL", label: "Todos" },
-        { value: "CAKE", label: "Tortas" },
         { value: "CHOCOLATE", label: "Chocolateria" },
-        { value: "PIE", label: "Amendoim" },
+        { value: "PIE", label: "Tortas" },
+        { value: "CAKE", label: "Bolos" },
     ];
+
+    // Lê o filtro da URL e aplica no selectedCategory
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const filter = params.get("filter");
+        if (filter) {
+            setSelectedCategory(filter);
+        }
+    }, [location.search]);
 
     useEffect(() => {
         const fetchProdutos = async () => {
@@ -47,6 +58,7 @@ function Categories() {
         fetchProdutos();
     }, []);
 
+    // Filtra os produtos com base no filtro selecionado
     useEffect(() => {
         if (selectedCategory === "ALL") {
             setFilteredProdutos(produtos);
@@ -63,8 +75,10 @@ function Categories() {
                 <Search />
             </div>
             <div className="filterContent">
+                {/* Passando o selectedCategory como valor para manter o filtro selecionado */}
                 <RadioGroup
                     options={options}
+                    selected={selectedCategory} // Passando o estado para o componente
                     onCategoryChange={setSelectedCategory}
                 />
             </div>

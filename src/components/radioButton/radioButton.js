@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import "./radioButton.scss";
 
-const RadioGroup = ({ options, onCategoryChange }) => {
-    const [selected, setSelected] = useState("ALL");
-
+const RadioGroup = ({ options, selected, onCategoryChange }) => {
     const handleCategoryChange = (value) => {
-        setSelected(value);
         onCategoryChange(value);
     };
 
@@ -18,7 +15,7 @@ const RadioGroup = ({ options, onCategoryChange }) => {
                         id={option.value}
                         name="radio"
                         value={option.value}
-                        checked={selected === option.value}
+                        checked={selected === option.value} // Usa o 'selected' para marcar o valor
                         onChange={() => handleCategoryChange(option.value)}
                     />
                     <label

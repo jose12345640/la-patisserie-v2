@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import "./intro.scss";
 import FeaturedContent from "../../components/featured-items/featured-items";
 
 function Intro() {
+    const navigate = useNavigate(); // Hook de navegação
+
     const [produtosDestaque, setProdutosDestaque] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -38,13 +41,13 @@ function Intro() {
     const getlabelStyle = (category) => {
         switch (category) {
             case "CAKE":
-                return  "Bolos" ;
+                return "Bolos";
             case "PIE":
-                return  "Tortas" ;
+                return "Tortas";
             case "CHOCOLATE":
-                return "Chocolateria" ;
+                return "Chocolateria";
             default:
-                return "" ;
+                return "";
         }
     };
 
@@ -60,7 +63,11 @@ function Intro() {
                 return { backgroundColor: "#FFFFFF", border: "1px solid #000000", color: "#000000" };
         }
     };
-    
+
+    // Função para navegar para a página de categorias com o filtro aplicado
+    const handleCategoryClick = (category) => {
+        navigate(`/categorias?filter=${category}`); // Adiciona o filtro na URL
+    };
 
     return (
         <div className="intro">
@@ -81,28 +88,22 @@ function Intro() {
                 <h2>Nossas Categorias</h2>
                 <div className="categories__content__items">
                     <div>
-                        <a href="/categorias">
-                            <div className="categories__content__items-info">
-                                <img src="https://i.ibb.co/d06YkWT/image-2.png" alt="" />
-                                <p>Chocolateria</p>
-                            </div>
-                        </a>
+                        <div className="categories__content__items-info" onClick={() => handleCategoryClick("CHOCOLATE")}>
+                            <img src="https://i.ibb.co/d06YkWT/image-2.png" alt="" />
+                            <p>Chocolateria</p>
+                        </div>
                     </div>
                     <div>
-                        <a href="/categorias">
-                            <div className="categories__content__items-info">
-                                <img src="https://i.ibb.co/MSRJ23r/image-3.png" alt="" />
-                                <p>Tortas</p>
-                            </div>
-                        </a>
+                        <div className="categories__content__items-info" onClick={() => handleCategoryClick("PIE")}>
+                            <img src="https://i.ibb.co/MSRJ23r/image-3.png" alt="" />
+                            <p>Tortas</p>
+                        </div>
                     </div>
                     <div>
-                        <a href="/categorias">
-                            <div className="categories__content__items-info">
-                                <img src="https://i.ibb.co/G3ScR9T/image-4-1.png" alt="" />
-                                <p>Bolos</p>
-                            </div>
-                        </a>
+                        <div className="categories__content__items-info" onClick={() => handleCategoryClick("CAKE")}>
+                            <img src="https://i.ibb.co/G3ScR9T/image-4-1.png" alt="" />
+                            <p>Bolos</p>
+                        </div>
                     </div>
                 </div>
             </div>
