@@ -6,7 +6,7 @@ import Button from "../../components/button/button";
 function Cart() {
     return (
         <section className="cart">
-            <a href="/">Adicionar mais items</a>
+            <a className="cart__back" href="/">◄ Adicionar mais items</a>
             <div className="cart__container">
                 <div className="cart__container__list">
                     <CartItem

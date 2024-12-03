@@ -26,6 +26,11 @@
 
   }
 
+  &__quantity{
+    width: 50px;
+    justify-items: center;
+  }
+
   &__button {
     background-color: transparent;
     border: none;
