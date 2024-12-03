@@ -19,7 +19,6 @@ function Login() {
       const { token } = response.data;
       console.log("Token recebido:", token);
 
-      // Salvar o token no localStorage ou outra solução de armazenamento
       localStorage.setItem("authToken", token);
 
       alert("Login bem-sucedido!");
@@ -57,7 +56,6 @@ function Login() {
           {error && <p className="error">{error}</p>}
           <div className="links">
             <button className="links__button" type="submit">Iniciar Sessão</button>
-            <a className="links__link-primary" href="#">Esqueci a palavra-passe</a>
           </div>
         </form>
       </div>

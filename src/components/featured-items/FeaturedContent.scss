@@ -7,6 +7,12 @@
    }
    &__img{
     position: relative;
+
+    img{
+        height: 191px;
+        object-fit: cover;
+        width: 344px;
+    }
     &-tag{
         position: absolute;
         top: 8px;
