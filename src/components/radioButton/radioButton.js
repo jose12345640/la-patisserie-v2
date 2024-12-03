@@ -1,8 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./radioButton.scss";
 
-const RadioGroup = ({options}) => {
+const RadioGroup = ({ options, onCategoryChange }) => {
     const [selected, setSelected] = useState(null);
+
+    const handleChange = (value) => {
+        setSelected(value);
+        onCategoryChange(value); 
+    };
 
     return (
         <div className="radio-group">
@@ -14,7 +19,7 @@ const RadioGroup = ({options}) => {
                         name="radio"
                         value={option.value}
                         checked={selected === option.value}
-                        onChange={() => setSelected(option.value)}
+                        onChange={() => handleChange(option.value)}
                     />
                     <label
                         htmlFor={option.value}
