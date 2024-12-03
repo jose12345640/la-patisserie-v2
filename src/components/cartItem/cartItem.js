@@ -6,7 +6,7 @@ const CartItem = ({img, name, price}) => {
             <img className="cart-container__img" src={img}/>
             <div className="cart-container__details">
                 <div>
-                    <h1>{name}</h1>
+                    <h2>{name}</h2>
                     <p>${price}</p>
                 </div>
                 <input type="number"/>
