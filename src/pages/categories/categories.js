@@ -82,6 +82,9 @@ function Categories() {
             <div className="itemContent">
                 {loading && <p>Carregando produtos...</p>}
                 {error && <p className="error-message">{error}</p>}
+                {!loading && !error && filteredProdutos.length === 0 && (
+                    <p>Não há items disponíveis!</p>
+                )}
                 {!loading &&
                     !error &&
                     filteredProdutos.map((produto, index) => (
