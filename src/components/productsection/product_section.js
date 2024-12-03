@@ -12,7 +12,9 @@ const ProductSection = ({imgProduto, descriptionProduto, nameProduto, priceProdu
                 <p className="productsection__info-price">{priceProduto}</p>
                 <div className="productsection__info-btn">
                     <button>
-                        Adicionar
+                        <p>
+                            Adicionar
+                        </p>
                     </button>
                 </div>
             </div>
