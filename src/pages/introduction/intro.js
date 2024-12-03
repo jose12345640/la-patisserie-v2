@@ -10,21 +10,26 @@ function Intro() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const handleProductClick = (produto) => {
+        navigate("/produto", { state: { produto } });
+    };
+
     useEffect(() => {
         const fetchProdutos = async () => {
             try {
-                const response = await fetch("http://localhost:8080/le-patisserie-backend/api/top");
+                const response = await fetch("http://localhost:8080/le-patisserie-backend/api/products");
                 if (!response.ok) {
                     throw new Error("Erro ao buscar produtos.");
                 }
                 const data = await response.json();
 
-                const produtosAdaptados = data.map((item) => ({
-                    imgSrc: item.product.imageUrl,
-                    label: getlabelStyle(item.product.category),
-                    labelstyle: getCategoryStyle(item.product.category),
-                    title: item.product.name,
-                    price: `R$ ${item.product.price.toFixed(2)}`,
+                const produtosAdaptados = data.slice(0, 3).map((item) => ({
+                    imgProduto: item.imageUrl,
+                    label: getlabelStyle(item.category),
+                    labelstyle: getCategoryStyle(item.category),
+                    nameProduto: item.name,
+                    descriptionProduto: item.description,
+                    priceProduto: `R$ ${item.price.toFixed(2)}`,
                 }));
 
                 setProdutosDestaque(produtosAdaptados);
@@ -116,11 +121,13 @@ function Intro() {
                         produtosDestaque.map((produto, index) => (
                             <FeaturedContent
                                 key={index}
-                                imgSrc={produto.imgSrc}
+                                imgProduto={produto.imgProduto}
                                 label={produto.label}
                                 labelstyle={produto.labelstyle}
-                                title={produto.title}
-                                price={produto.price}
+                                nameProduto={produto.nameProduto}
+                                descriptionProduto={produto.descriptionProduto}
+                                priceProduto={produto.priceProduto}
+                                onClick={() => handleProductClick(produto)}
                             />
                         ))}
                 </div>

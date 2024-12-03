@@ -1,23 +1,22 @@
 import "./FeaturedContent.scss"
 
-const FeaturedContent = ({ imgSrc, label, labelstyle, title, price }) => {
+const FeaturedContent = ({ imgProduto, label, labelstyle, nameProduto, descriptionProduto, priceProduto, onClick }) => {
     
     return (
-        <div className="feature-item">
-            <a href="/produto">
+        <div className="feature-item" onClick={onClick}>
             <div className="feature-item__img">
-                <img src={imgSrc} />
+                <img src={imgProduto} />
                 <span className="feature-item__img-tag"  style={{...labelstyle }}>{label}</span>
             </div>
             <div class="feature-item__content">
                 <div>
-                    <p>{title}</p>
+                    <p>{nameProduto}</p>
+                    <p hidden>{descriptionProduto}</p>
                 </div>
                 <div>
-                    <p>{price}</p>
+                    <p>{priceProduto}</p>
                 </div>
             </div>
-            </a>
         </div>
     )
 }
