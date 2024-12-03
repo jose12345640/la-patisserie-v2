@@ -15,7 +15,7 @@ const RadioGroup = ({ options, selected, onCategoryChange }) => {
                         id={option.value}
                         name="radio"
                         value={option.value}
-                        checked={selected === option.value} // Usa o 'selected' para marcar o valor
+                        checked={selected === option.value} 
                         onChange={() => handleCategoryChange(option.value)}
                     />
                     <label

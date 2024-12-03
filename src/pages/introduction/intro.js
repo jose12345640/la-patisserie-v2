@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { useNavigate } from "react-router-dom"; 
 import "./intro.scss";
 import FeaturedContent from "../../components/featured-items/featured-items";
 
 function Intro() {
-    const navigate = useNavigate(); // Hook de navegação
+    const navigate = useNavigate(); 
 
     const [produtosDestaque, setProdutosDestaque] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -64,9 +64,8 @@ function Intro() {
         }
     };
 
-    // Função para navegar para a página de categorias com o filtro aplicado
     const handleCategoryClick = (category) => {
-        navigate(`/categorias?filter=${category}`); // Adiciona o filtro na URL
+        navigate(`/categorias?filter=${category}`); 
     };
 
     return (

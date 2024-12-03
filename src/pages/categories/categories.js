@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom"; // Importa useLocation
+import { useLocation } from "react-router-dom"; 
 import "./categories.scss";
 import Search from "../../components/search/search";
 import CardContent from "../../components/cardContent/cardcontent";
 import RadioGroup from "../../components/radioButton/radioButton";
 
 function Categories() {
-    const location = useLocation(); // Usando o hook useLocation para acessar a URL
+    const location = useLocation(); 
     const [produtos, setProdutos] = useState([]);
     const [filteredProdutos, setFilteredProdutos] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -20,7 +20,6 @@ function Categories() {
         { value: "CAKE", label: "Bolos" },
     ];
 
-    // Lê o filtro da URL e aplica no selectedCategory
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         const filter = params.get("filter");
@@ -58,7 +57,6 @@ function Categories() {
         fetchProdutos();
     }, []);
 
-    // Filtra os produtos com base no filtro selecionado
     useEffect(() => {
         if (selectedCategory === "ALL") {
             setFilteredProdutos(produtos);
@@ -75,10 +73,9 @@ function Categories() {
                 <Search />
             </div>
             <div className="filterContent">
-                {/* Passando o selectedCategory como valor para manter o filtro selecionado */}
                 <RadioGroup
                     options={options}
-                    selected={selectedCategory} // Passando o estado para o componente
+                    selected={selectedCategory} 
                     onCategoryChange={setSelectedCategory}
                 />
             </div>
